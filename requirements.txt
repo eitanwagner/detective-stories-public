@@ -1,0 +1,23 @@
+# Core data / ML
+numpy
+pandas
+torch
+transformers
+nltk
+scipy
+statsmodels
+
+# Plotting
+matplotlib
+seaborn
+
+# LLM APIs
+openai
+anthropic
+google-generativeai
+google-cloud-aiplatform  # for Vertex AI (Llama models)
+
+# Utilities
+requests
+networkx
+python-dotenv  # optional: load .env automatically

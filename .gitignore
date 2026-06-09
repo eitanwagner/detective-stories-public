@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.png
+.env
+.claude/
+.idea/
+.pytest_cache/
+logs/
+output
