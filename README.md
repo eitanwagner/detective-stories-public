@@ -33,6 +33,15 @@ detective-stories/
 
 ---
 
+## System requirements
+
+- **Python**: 3.11+ (tested on 3.11)
+- **OS**: Tested on Debian 12
+- **Hardware**: No non-standard hardware required. Story generation and reader estimation require API access (see below); analysis of pre-generated data runs on any standard desktop.
+- **Dependencies**: Listed in `requirements.txt`
+
+---
+
 ## Setup
 
 **1. Clone and install dependencies**
@@ -42,6 +51,8 @@ git clone <repo-url>
 cd detective-stories-public
 pip install -r requirements.txt
 ```
+
+Typical install time: under 5 minutes on a standard desktop (excluding PyTorch, which may vary).
 
 **2. Set API credentials**
 
@@ -74,7 +85,9 @@ cd analyze_results
 python main.py
 ```
 
-Output figures are saved to `plots/`. Toggle individual analyses at the top of `main.py` via the `RUN_*` flags.
+Output figures are saved to `plots/` (PNG and PDF). Toggle individual analyses at the top of `main.py` via the `RUN_*` flags.
+
+Expected run time: under 5 minutes on a standard desktop for the full analysis pipeline from pre-generated data.
 
 ---
 
@@ -147,6 +160,12 @@ Real-story baselines: **Sherlock Holmes** (*The Adventures of Sherlock Holmes*) 
 - **Human study data**: `results/for eval2/` — Excel file with crowdsourced suspect predictions and subjective ratings (n=20 participants)
 - **Classic baselines**: `stories/sherlock_w_suspects*.json`, `stories/poirot_w_suspects*.json`
 - **Project Gutenberg source texts**: not included; see `extract_stories.py` and set `DETECTIVE_FICTION_CSV` / `DETECTIVE_BOOKS_JSON` env vars (see `.env.example`)
+
+---
+
+## License
+
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
