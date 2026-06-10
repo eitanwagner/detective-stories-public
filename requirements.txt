@@ -20,4 +20,5 @@ google-cloud-aiplatform  # for Vertex AI (Llama models)
 # Utilities
 requests
 networkx
+openpyxl
 python-dotenv  # optional: load .env automatically
