@@ -85,9 +85,13 @@ cd analyze_results
 python main.py
 ```
 
-Output figures are saved to `plots/` (PNG and PDF). Toggle individual analyses at the top of `main.py` via the `RUN_*` flags.
+This serves as the **demo**: it reads the pre-generated data, runs all statistical analyses, and produces all paper figures.
 
-Expected run time: under 5 minutes on a standard desktop for the full analysis pipeline from pre-generated data.
+**Expected output**: Figures are saved to `plots/` in both PNG and PDF format. These include fair play scatter plots, model ordering diagrams, reading curve comparisons, subjective rating breakdowns, and correlation analyses (corresponding to Figures 2–5 in the paper and supplementary figures). Statistical results are printed to the console.
+
+**Expected run time**: under 5 minutes on a standard desktop.
+
+Toggle individual analyses at the top of `main.py` via the `RUN_*` flags.
 
 ---
 
@@ -110,7 +114,7 @@ Key arguments (see `utils.py` for the full list):
 | `-np` | Number of paragraphs per story (25 in the paper) |
 | `--id` | Story index (for parallelising across stories) |
 
-Generated stories are saved as JSON to `stories/`.
+Generated stories are saved as JSON to `stories/`. Expected run time per story depends on the model and API latency (each story requires 25 sequential API calls).
 
 ---
 
@@ -133,6 +137,8 @@ python crime_fiction.py -mt openai -mn gpt-4o -ld -st gpt-4o -es3
 ```bash
 python crime_fiction.py -mt gemini -mn gemini-3-flash-preview -ld -st gpt-4o -es3
 ```
+
+Expected run time depends on the model, number of stories, and number of samples. As a rough guide, evaluating 10 stories with the know-it-all reader (20 samples) takes on the order of 30 minutes for a fast model.
 
 After evaluation, run:
 
